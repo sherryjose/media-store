@@ -1,6 +1,6 @@
 # Imdb
 
-The app is used to list programme suggestions on search and display programme details on title selection. 
+The app is used to list programme suggestions on search and display programme details on selecting a suggestion from list. 
 
 For API usage, refer https://rapidapi.com/apidojo/api/imdb8 **
 
