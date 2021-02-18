@@ -1,0 +1,23 @@
+<div class="filter-wrapper">
+    <form>
+        <input type="search" name="q" autocomplete="off" placeholder="Search for a title..." [(ngModel)]="title"
+            (ngModelChange)="onTitleChange($event)">
+    </form>
+    <ul>
+        <ng-container *ngIf="titleSuggestions && title && !loading">
+            <li class="flex-container" (click)="onTitleSelection(titles.id)" *ngFor="let titles of titleSuggestions">
+                <div class="img-container">
+                    <img src="{{titles.i?.imageUrl}}" alt="Title poster" width="50">
+                </div>
+                <div class="title">
+                    <h4 class="title-name text-hidden">{{titles.l}}</h4>
+                    <div class="title-year text-hidden">{{titles.y}}</div>
+                    <small class="title-info text-hidden">{{titles.s}}</small>
+                </div>
+            </li>
+        </ng-container>
+        <div class="flex-center" *ngIf="loading">
+            <div class="loader"></div>
+        </div>
+    </ul>
+</div>

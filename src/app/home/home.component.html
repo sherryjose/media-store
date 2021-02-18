@@ -1,0 +1,11 @@
+<div *ngIf="mediaDetails && !isTitleCleared" class="home-wrapper flex-container">
+    <div class="img-container">
+        <img src="{{mediaDetails.image?.url}}" alt="Media poster">
+    </div>
+    <div class="media">
+        <h1 class="media-title">{{mediaDetails.title}}</h1>
+        <div class="media-info" *ngIf="mediaDetails.year"><label>Year of release</label>{{mediaDetails.year}}</div>
+        <div class="media-info" *ngIf="mediaDetails.runningTimeInMinutes"><label>Running
+                time</label>{{convertMinToHrs(mediaDetails.runningTimeInMinutes)}}</div>
+    </div>
+</div>

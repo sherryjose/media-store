@@ -1,0 +1,4 @@
+<div class="flex-container">
+    <app-filter class="flex-item" (titleClear)="onTitleClear($event)" (titleClick)="onTitleClick($event)"></app-filter>
+    <app-home class="flex-item" [isTitleCleared]="isTitleCleared" [mediaDetails]="mediaDetails"></app-home>
+</div>
