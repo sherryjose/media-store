@@ -30,7 +30,7 @@ export class DataService {
         "title": "Don Bosco",
         "titleType": "tvMovie",
         "year": 2004
-      });
+      }).pipe(delay(1500));
     } else if (id === 'tt0095051') {
       return of({
         "@type": "imdb.api.title.title",
@@ -45,7 +45,7 @@ export class DataService {
         "title": "Don Bosco",
         "titleType": "movie",
         "year": 1988
-      });
+      }).pipe(delay(1500));
     } else {
       return of(
         {
@@ -61,7 +61,7 @@ export class DataService {
           "title": "Don Bosco",
           "titleType": "movie",
           "year": 1936
-        }).pipe(delay(2000));
+        }).pipe(delay(1500));
     }
     return this.httpClient.get<MediaDetails>(`${this.IMDB_API}/title/get-details`, { params });
   }

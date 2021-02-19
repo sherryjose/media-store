@@ -60,7 +60,7 @@ export class FilterService {
       ],
       "q": "Don Bosco",
       "v": 1
-    }).pipe(delay(2000));
+    }).pipe(delay(1500));
     return this.httpClient.get<TitleSuggestions>(`${this.IMDB_API}/auto-complete`, { params });
   }
 }
