@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { TitleSuggestions } from './title-suggestions.model';
 
@@ -14,71 +15,52 @@ export class FilterService {
 
   getTitleSuggestions(titleQuery: string): Observable<TitleSuggestions> {
     const params = new HttpParams().set('q', titleQuery);
-    return this.httpClient.get<TitleSuggestions>(`${this.IMDB_API}/auto-complete`, { params });
     // test data
     return of({
       "d": [
         {
           "i": {
-            "height": 1500,
-            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDYzZTRlNGEtZDc2Mi00ZGNjLTlmZDAtMmVjMDZkOThiODEwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-            "width": 1013
+            "height": 826,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMjg1ZDU4ZDMtZWQxNi00OTFlLTkwMDItZDJmYzYzMGEwOTcyXkEyXkFqcGdeQXVyMzM2NzgzNjM@._V1_.jpg",
+            "width": 583
           },
-          "id": "tt183749",
-          "l": "13 Reasons Why",
-          "q": "TV series",
-          "rank": 556,
-          "s": "Dylan Minnette, Katherine Langford",
-          "v": [],
-          "vt": 39,
-          "y": 2017,
-          "yr": "2017-2020"
+          "id": "tt0416694",
+          "l": "Don Bosco",
+          "q": "TV movie",
+          "rank": 101257,
+          "s": "Flavio Insinna, Lina Sastri",
+          "y": 2004
         },
         {
           "i": {
-            "height": 1500,
-            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDYzZTRlNGEtZDc2Mi00ZGNjLTlmZDAtMmVjMDZkOThiODEwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-            "width": 1013
+            "height": 500,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMWVjZTdlMWUtYzE2OC00MTE1LTlmMTMtMDQyNTA1M2IyZGM2XkEyXkFqcGdeQXVyNTM3MDMyMDQ@._V1_.jpg",
+            "width": 375
           },
-          "id": "tt1837492",
-          "l": "13 Reasons Why",
-          "q": "TV series",
-          "rank": 556,
-          "s": "Dylan Minnette, Katherine Langford",
-          "v": [],
-          "vt": 39,
-          "y": 2017,
-          "yr": "2017-2020"
+          "id": "tt0095051",
+          "l": "Don Bosco",
+          "q": "feature",
+          "rank": 119668,
+          "s": "Ben Gazzara, Patsy Kensit",
+          "y": 1988
         },
         {
           "i": {
-            "height": 1500,
-            "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDYzZTRlNGEtZDc2Mi00ZGNjLTlmZDAtMmVjMDZkOThiODEwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
-            "width": 1013
+            "height": 2511,
+            "imageUrl": "https://m.media-amazon.com/images/M/MV5BOTM3NDZhNWEtY2VlYy00ZTQyLTk2MTMtMTk1YWNmN2ZmNDNmXkEyXkFqcGdeQXVyMzg1ODEwNQ@@._V1_.jpg",
+            "width": 1757
           },
-          "id": "tt1837492",
-          "l": "13 Reasons Why",
-          "q": "TV series",
-          "rank": 556,
-          "s": "Dylan Minnette, Katherine Langford",
-          "v": [
-            {
-              "i": {
-                "height": 1804,
-                "imageUrl": "https://m.media-amazon.com/images/M/MV5BMDQ3MGJlNzQtNDFmYi00Y2U1LWE4MTktYTgzOGFjYzhhZjhkXkEyXkFqcGdeQWFybm8@._V1_.jpg",
-                "width": 3425
-              },
-              "id": "vi63356441",
-              "l": "Final Trailer",
-              "s": "2:08"
-            }
-          ],
-          "vt": 39,
-          "y": 2017,
-          "yr": "2017-2020"
-        }],
-      "q": 'qqq',
+          "id": "tt0026286",
+          "l": "Don Bosco",
+          "q": "feature",
+          "rank": 410672,
+          "s": "Gian Paolo Rosmino, Ferdinando Mayer",
+          "y": 1936
+        }
+      ],
+      "q": "Don Bosco",
       "v": 1
-    });
+    }).pipe(delay(2000));
+    return this.httpClient.get<TitleSuggestions>(`${this.IMDB_API}/auto-complete`, { params });
   }
 }

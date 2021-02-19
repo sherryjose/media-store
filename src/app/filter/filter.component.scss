@@ -1,5 +1,6 @@
 .filter-wrapper {
-    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 3px 6px 1px rgb(0 0 0 / 50%);
 
     form input[type="search"] {
         width: 100%;
@@ -18,9 +19,10 @@
         padding: 0;
         list-style-type: none;
         background-color: #fff;
-        border-radius: 0 0 3px 3px;
-        box-shadow: 0 0px 6px 3px rgb(0 0 0 / 50%);
         cursor: pointer;
+        max-height: 44vh;
+        overflow-y: auto;
+
 
         .flex-center {
             display: flex;
@@ -99,6 +101,12 @@
                     color: rgb(0 0 0 / 85%);
                 }
             }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        ul {
+            max-height: 88vh;
         }
     }
 }

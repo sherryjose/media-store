@@ -14,11 +14,4 @@ export class HomeComponent {
       this.mediaDetails = null;
     }
   }
-  convertMinToHrs = (min): string => {
-    const hours = (min / 60);
-    const roundedHours = Math.floor(hours);
-    const minutes = (hours - roundedHours) * 60;
-    const roundedMinutes = Math.round(minutes);
-    return (roundedHours ? `${roundedHours}h` : '') + (roundedMinutes ? ` ${roundedMinutes}m` : '');
-  };
 }

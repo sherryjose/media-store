@@ -6,6 +6,6 @@
         <h1 class="media-title">{{mediaDetails.title}}</h1>
         <div class="media-info" *ngIf="mediaDetails.year"><label>Year of release</label>{{mediaDetails.year}}</div>
         <div class="media-info" *ngIf="mediaDetails.runningTimeInMinutes"><label>Running
-                time</label>{{convertMinToHrs(mediaDetails.runningTimeInMinutes)}}</div>
+                time</label>{{mediaDetails.runningTimeInMinutes | time}}</div>
     </div>
 </div>

@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { HttpAuthInterceptor } from './helpers/http-auth.interceptor';
 import { FilterComponent } from './filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import { TimePipe } from './helpers/time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FilterComponent
+    FilterComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
